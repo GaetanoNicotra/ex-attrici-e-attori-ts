@@ -251,3 +251,20 @@ function updateActor(attrice: Actor, modifiche: Partial<Omit<Actor, 'id' | 'name
         // name: attrice.name
     }
 }
+
+
+// MILESTON 9 (BONUS)
+
+async function createRandomCouple(): Promise<[Actress, Actor]> {
+    const actresses = await getAllActresses();
+    const actors = await getAllActors();
+
+    if (actresses.length === 0 || actors.length === 0) {
+        throw new Error("Non ci sono abbastanza attrici o attori per creare una coppia.");
+    }
+
+    const randomActress = actresses[Math.floor(Math.random() * actresses.length)];
+    const randomActor = actors[Math.floor(Math.random() * actors.length)];
+
+    return [randomActress, randomActor];
+}
