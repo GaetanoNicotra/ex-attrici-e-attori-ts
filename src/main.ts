@@ -8,3 +8,12 @@ type Person = {
     biography: string,
     image: string,
 }
+
+
+// MILESTON 2
+
+type Actress = Person & {
+    most_famous_movies: [string, string, string],
+    awards: string,
+    nationality: 'American' | 'British' | 'Australian' | 'Israeli-American' | 'SouthAfrican' | 'French' | 'Indian' | 'Israeli' | 'Spanish' | 'SouthKorean' | 'Chinese'
+}
